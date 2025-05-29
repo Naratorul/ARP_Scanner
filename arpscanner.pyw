@@ -21,8 +21,8 @@ def get_network_range():
 def get_device_type(mac):
     oui = mac[:8].upper()
     device_types = {
-        "B8:27:EB": "Raspberry Pi",
-        "00:1A:2B": "Cisco Device",
+        "B8:27:EB": "Pc",
+        "00:1A:2B": "Phone",
     }
     return device_types.get(oui, "Unknown Device")
 
@@ -84,7 +84,7 @@ if __name__ == '__main__':
             for device in devices:
                 print(f"{device['ip']:<22} {device['mac']:<20} {device['type']:<20} {device['status']}")
         else:
-            print("\nNo active devices found.")
+            print("\nNo devices found")
         
         print(f"\nScan completed in {elapsed_time:.2f} seconds.")
         
